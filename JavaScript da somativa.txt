@@ -1,0 +1,99 @@
+Script --
+
+<script type="module">
+        var input = document.getElementById("msg");
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                enviarMSG();
+            }
+        });
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+        import { getDatabase, ref, set, push, remove, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyCk6DZ3AzD94H52crcyhrAhQ9ZovemnZ-Q",
+          authDomain: "chat-app-a761e.firebaseapp.com",
+          projectId: "chat-app-a761e",
+          storageBucket: "chat-app-a761e.appspot.com",
+          messagingSenderId: "767776715184",
+          appId: "1:767776715184:web:a5984a222e3eeb6320a675"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        var db = getDatabase(app);
+        const dbRef = ref(db, 'turma3', 'turma4');
+
+        var meuhtml = "";
+
+        var nomeUsuario = prompt("Digite seu nome");
+
+        onValue(dbRef, (snapshot) => {
+            const data = snapshot.val();
+            console.log(data);
+            meuhtml = "";
+            snapshot.forEach(function (childSnapshot) {
+                var key = childSnapshot.key;
+                console.log(key);
+                console.log(childSnapshot.val().nome);
+                console.log(childSnapshot.val().mensagem);
+
+                meuhtml += '<div class="msg"><b>' + childSnapshot.val().nome +  '</i></b><span>' + childSnapshot.val().mensagem + '</span></div>';
+
+            });
+            atualizarHTML();
+        });
+
+        function enviarMSG() {
+
+            var datahj = new Date();
+            var hora = datahj.getHours() + ":" + datahj.getMinutes() + ":" + datahj.getSeconds()
+
+            push(ref(db, 'turma3'), {
+                nome: nomeUsuario,
+                horario: hora,
+                mensagem: document.getElementById("msg").value
+            });
+
+            document.getElementById("msg").value = "";
+        }
+
+        function atualizarHTML() {
+            document.getElementById("conteudo").innerHTML = meuhtml
+            ajustarScroll();
+        }
+
+        function ajustarScroll() {
+            console.log("corrirgir scroll");
+            var divConteudo = document.getElementById("conteudo");
+            divConteudo.scrollTop = divConteudo.scrollHeight;
+        }
+
+    </script>
+
+
+
+
+
+
+Meu FireBase --
+
+<script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCk6DZ3AzD94H52crcyhrAhQ9ZovemnZ-Q",
+          authDomain: "chat-app-a761e.firebaseapp.com",
+          projectId: "chat-app-a761e",
+          storageBucket: "chat-app-a761e.appspot.com",
+          messagingSenderId: "767776715184",
+          appId: "1:767776715184:web:a5984a222e3eeb6320a675"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>

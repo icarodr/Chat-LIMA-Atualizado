@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(fundo_amadeirado.jpg);
+}
+
+input {
+
+    display: block;
+    width: 90%;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 10px solid #000000;
+    margin-top: 900px;
+    font-family: inherit;
+    max-width: 80rem;
+    margin: auto;
+    margin-top: 1rem;
+}
+.botao{
+
+    width: 115px;
+    display: flex;
+    font-size: x-large;
+    font-variant-position: normal;
+    background-color: #22cc92;
+    padding: 3%;
+    align-items: center;
+}
+
+msg {
+
+    color: #000000;
+
+}
+
+b {
+    display: flex;
+    text-transform: uppercase;
+    margin: 6px 0;
+}
+
+span {
+    font-size: 15px;
+}
+
+#msg {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#conteudo {
+    padding: 10px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    background-image: url(valval.jpg);
+    background-size: cover;
+    background-position: flex;
+    border: Solid 3px rgb(255, 255, 255);
+}
+
+.msg {
+    border-bottom: 1px solid #f3f3f3;
+    padding: 8px 0;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: burlywood;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+.chat{
+    margin: auto;
+    width: 80vw;
+    margin-top: 5rem;
+}
+
+.eu {
+    display: flex;
+    margin: 7px 10px;
+    border-radius: 5px;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.outros {
+    display: flex;
+    margin: 7px 10px;
+    text-align: left;
+    border-radius: 5px;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    align-content: flex-start;
+    flex: 1;
+}
+
+.hoho {
+    background: #f7f7f7;
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+.self {
+    background: #22cc92;
+    color: #fff;
+}
+
+.bo {
+    display: block;
+    padding: 6px 0;
+}
+
+.hour {
+    margin-top: 15px;
+    font-size: small;
+    color: gray;
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        padding: 2rem 0.5rem;
+    }
+
+    .chat {
+        width: 100%;
+    }
+
+    #msg{
+        display: block;
+    }
+}
