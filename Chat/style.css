@@ -3,28 +3,30 @@ body {
     background-image: url(fundo_amadeirado.jpg);
 }
 
-input {
+#msg {
 
-    display: block;
-    width: 90%;
-    height: 20px;
+    width: 70%;
+    height: 25px;
     border-radius: 20px;
     box-shadow: 10px solid #000000;
     margin-top: 900px;
     font-family: inherit;
-    max-width: 80rem;
     margin: auto;
-    margin-top: 1rem;
 }
 .botao{
 
-    width: 115px;
-    display: flex;
     font-size: x-large;
     font-variant-position: normal;
     background-color: #22cc92;
-    padding: 3%;
-    align-items: center;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    border-radius: 17px;
+}
+
+.dois{
+    margin:auto;
+    max-width: 70rem;
+    padding: 10px;
 }
 
 msg {
